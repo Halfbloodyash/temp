@@ -13,6 +13,7 @@ while True:
 
  dic = {'Date/Time': time.asctime(time.localtime())[4:19], 'Temperature': value}
  df = df.append(dic, ignore_index=True)
+ df = pd.DataFrame(df).append(new_row, ignore_index=True)
  df.to_csv('temp.csv',index=False)
  chart.empty()
  chart = st.line_chart(df, x='Date/Time', y='Temperature')
