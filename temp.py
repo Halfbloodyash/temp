@@ -1,5 +1,3 @@
-import pkg_resources
-pkg_resources.require("pandas==1.5.2")
 import pandas
 import streamlit as st
 import requests
