@@ -12,7 +12,8 @@ while True:
  value = value.json()['temperature (C)']['value']
 
  dic = {'Date/Time': time.asctime(time.localtime())[4:19], 'Temperature': value}
- df = df.append(dic, ignore_index=True)
+ 
+ df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
  
  df.to_csv('temp.csv',index=False)
  chart.empty()
